@@ -1,0 +1,8 @@
+[paths]
+source = jsx/
+
+[run]
+branch = true
+
+[html]
+directory = coverage_html_report
