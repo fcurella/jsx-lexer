@@ -32,7 +32,7 @@ TOKENS.update({
 TOKENS['root'].insert(0, include('jsx'))
 
 
-class JSXLexer(JavascriptLexer):
+class JsxLexer(JavascriptLexer):
     name = 'react'
     aliases = ['jsx', 'react']
     filenames = ['*.jsx', '*.react']

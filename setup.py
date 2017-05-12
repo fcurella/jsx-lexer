@@ -26,10 +26,11 @@ setup(
     install_requires=[
         'Pygments >= 2.1'
     ],
+    test_suite='tests',
     license='MIT License',
     packages=find_packages(exclude=["docs", "tests", "tests.*"]),
     entry_points="""
         [pygments.lexers]
-        jsx=jsx:JSXLexer
+        jsx=jsx:JsxLexer
     """
 )

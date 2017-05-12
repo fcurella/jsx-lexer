@@ -1,4 +1,4 @@
-from .lexer import JSXLexer # noqa
+from .lexer import JsxLexer # noqa
 
 
-__all__ = ['JSXLexer']
+__all__ = ['JsxLexer']
