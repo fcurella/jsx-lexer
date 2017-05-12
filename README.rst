@@ -12,7 +12,7 @@ Installation
 Usage
 -----
 
-To use within Sphinx, simply specify 'jsx' for your `code-block`::
+To use within Sphinx, simply specify ``jsx`` for your ``code-block``::
 
     .. code-block:: jsx
 
