@@ -36,6 +36,7 @@ class JSXLexer(JavascriptLexer):
     name = 'react'
     aliases = ['jsx', 'react']
     filenames = ['*.jsx', '*.react']
+    mimetypes = ['text/jsx', 'text/typescript-jsx']
 
     flags = re.MULTILINE | re.DOTALL | re.UNICODE
 
