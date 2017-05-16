@@ -1,3 +1,9 @@
+const isOldEnough = (value, ownProps) => {
+    if (parseInt(value, 10) < 14) {
+        return "Only 14yo and older can register to the site."
+    }
+};
+
 // functional component
 const BlogTitle = ({ children }) => (
   <h3>{children}</h3>
