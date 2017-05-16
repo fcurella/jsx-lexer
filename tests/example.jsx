@@ -13,6 +13,7 @@ class BlogPost extends React.Component {
     <div className="blog-body">
       {this.renderTitle(this.props.title)}
       <p>{this.props.body}</p>
+      <input type="text" {...props.inputProps} />
     </div>
     );
   }

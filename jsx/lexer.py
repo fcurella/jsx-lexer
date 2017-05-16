@@ -19,7 +19,8 @@ TOKENS.update({
         (r'\s+', Text),
         (r'([\w]+\s*)(=)(\s*)', bygroups(Name.Attribute, Operator, Text),
          'attr'),
-        (r'[\w]+', Name.Attribute),
+        (r'[{}]+', Punctuation),
+        (r'[\w\.]+', Name.Attribute),
         (r'(/?)(\s*)(>)', bygroups(Punctuation, Text, Punctuation), '#pop'),
     ],
     'attr': [
