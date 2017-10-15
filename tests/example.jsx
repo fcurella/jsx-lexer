@@ -19,6 +19,7 @@ class BlogPost extends React.Component {
     <div className="blog-body">
       {this.renderTitle(this.props.title)}
       <p>{this.props.body}</p>
+      <custom-component_underscore>text</custom-component_underscore>
       <input type="text" {...props.inputProps} />
     </div>
     );
