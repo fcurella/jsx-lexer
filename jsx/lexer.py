@@ -9,10 +9,10 @@ from pygments.token import Name, Operator, Punctuation, String, Text
 TOKENS = JavascriptLexer.tokens
 TOKENS.update({
     'jsx': [
-        (r'(<)([\w_\-]+)',
+        (r'(<)([\w]+)',
          bygroups(Punctuation, Name.Tag), 'tag'),
-        (r'(<)(/)(\s*)([\w_\-]+)(\s*)(>)',
-         bygroups(Punctuation, Punctuation, Text, Name.Tag, Text,
+        (r'(<)(/)([\w]+)(>)',
+         bygroups(Punctuation, Punctuation, Name.Tag,
                   Punctuation)),
     ],
     'tag': [
