@@ -6,3 +6,4 @@ build
 .cache
 .coverage
 coverage_html_report
+.idea
