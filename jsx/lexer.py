@@ -1,6 +1,6 @@
 import re
 
-from pygments.lexer import bygroups, include
+from pygments.lexer import bygroups, include, default
 from pygments.lexers.javascript import JavascriptLexer
 from pygments.token import Name, Operator, Punctuation, String, Text
 
@@ -17,18 +17,22 @@ TOKENS.update({
     ],
     'tag': [
         (r'\s+', Text),
-        (r'([\w]+\s*)(=)(\s*)', bygroups(Name.Attribute, Operator, Text),
-         'attr'),
+        (r'([\w]+\s*)(=)(\s*)', bygroups(Name.Attribute, Operator, Text), 'attr'),
         (r'[{}]+', Punctuation),
         (r'[\w\.]+', Name.Attribute),
         (r'(/?)(\s*)(>)', bygroups(Punctuation, Text, Punctuation), '#pop'),
     ],
     'attr': [
-        ('\s+', Text),
+        ('{', Punctuation, 'expression'),
         ('".*?"', String, '#pop'),
         ("'.*?'", String, '#pop'),
-        (r'[^\s>]+', String, '#pop'),
+        default ('#pop')
     ],
+    'expression': [
+        ('{', Punctuation, '#push'),
+        ('}', Punctuation, '#pop'),
+        include('root')
+    ]
 })
 TOKENS['root'].insert(0, include('jsx'))
 
