@@ -48,4 +48,6 @@ const shortSyntaxfragmentFullBody = <><div/></>;
 
 const reactDotFragment = <React.Fragment><div/></React.Fragment>;
 
-const reactDotContext = <Context.Priovider><div/></Context.Priovider>;
+const reactDotContext = <Context.Provider><div/></Context.Provider>;
+
+const reactDotContextValue = <Context.Provider value="Hello"><div/></Context.Provider>;
