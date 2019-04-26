@@ -41,3 +41,13 @@ const blogNode = <BlogPost title="What's going on?" body={body} />;
   <p>Hello World!</p>
   </div>
 */
+
+const shortSyntaxfragmentEmptyBody = <></>;
+
+const shortSyntaxfragmentFullBody = <><div/></>;
+
+const reactDotFragment = <React.Fragment><div/></React.Fragment>;
+
+const reactDotContext = <Context.Provider><div/></Context.Provider>;
+
+const reactDotContextValue = <Context.Provider value="Hello"><div/></Context.Provider>;

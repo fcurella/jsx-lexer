@@ -9,11 +9,14 @@ from pygments.token import Name, Operator, Punctuation, String, Text
 TOKENS = JavascriptLexer.tokens
 TOKENS.update({
     'jsx': [
-        (r'(<)([\w]+)',
-         bygroups(Punctuation, Name.Tag), 'tag'),
+        (r'(<)(/?)(>)', bygroups(Punctuation, Punctuation, Punctuation)),  # JSXFragment <>|</>
+        (r'(<)([\w]+)(\.?)',
+         bygroups(Punctuation, Name.Tag, Punctuation), 'tag'),
         (r'(<)(/)([\w]+)(>)',
          bygroups(Punctuation, Punctuation, Name.Tag,
                   Punctuation)),
+        (r'(<)(/)([\w]+)',
+         bygroups(Punctuation, Punctuation, Name.Tag), 'fragment'), # Same for React.Context
     ],
     'tag': [
         (r'\s+', Text),
@@ -21,6 +24,10 @@ TOKENS.update({
         (r'[{}]+', Punctuation),
         (r'[\w\.]+', Name.Attribute),
         (r'(/?)(\s*)(>)', bygroups(Punctuation, Text, Punctuation), '#pop'),
+    ],
+    'fragment': [
+        (r'(.)([\w]+)', bygroups(Punctuation, Name.Attribute)),
+        (r'(>)', bygroups(Punctuation), '#pop')
     ],
     'attr': [
         ('{', Punctuation, 'expression'),
