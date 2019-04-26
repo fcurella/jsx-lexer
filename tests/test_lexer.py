@@ -139,3 +139,40 @@ class JsxLexerTestCase(TestCase):
             (Token.Punctuation, '/'),
             (Token.Punctuation, '>'),
         ])
+
+    def test_lexing_short_syntax_fragments(self):
+        """
+        Testing <></> React Short Syntax JSXFragment
+        see: `https://facebook.github.io/jsx/`
+        JSXFragment :
+            <> JSXChildrenopt </>
+        """
+        lexer = lexers.get_lexer_by_name('jsx')
+        tokens = lexer.get_tokens('''<></>''')
+        self.assertEqual(self.__filter_tokens(tokens), [
+            (Token.Punctuation, '<'),
+            (Token.Punctuation, '>'),
+            (Token.Punctuation, '<'),
+            (Token.Punctuation, '/'),
+            (Token.Punctuation, '>')
+        ])
+
+    def test_lexing_full_fragments(self):
+        """
+        Testing <React.Fragment></React.Fragment>
+        """
+        lexer = lexers.get_lexer_by_name('jsx')
+        tokens = lexer.get_tokens('''<React.Fragment></React.Fragment>''')
+        self.assertEqual(self.__filter_tokens(tokens), [
+            (Token.Punctuation, '<'),
+            (Token.Name.Tag, 'React'),
+            (Token.Punctuation, '.'),
+            (Token.Name.Attribute, 'Fragment'),
+            (Token.Punctuation, '>'),
+            (Token.Punctuation, '<'),
+            (Token.Punctuation, '/'),
+            (Token.Name.Tag, 'React'),
+            (Token.Punctuation, '.'),
+            (Token.Name.Attribute, 'Fragment'),
+            (Token.Punctuation, '>'),
+        ])
