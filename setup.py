@@ -23,7 +23,7 @@ setup(
         "Programming Language :: Python :: 3",
     ],
     keywords="pygments highlight jsx react",
-    install_requires=["Pygments >= 2.1"],
+    install_requires=["Pygments >= 2.7"],
     test_suite="tests",
     license="MIT License",
     packages=find_packages(exclude=["docs", "tests", "tests.*"]),
