@@ -115,3 +115,5 @@ Now, you can use ``{lexer.py:JsxLexer -x}`` in front of your minted code blocks:
           }
         }
     \end{minted}
+    
+You can find an example of the lexer in use on Overleaf here: `https://www.overleaf.com/read/xvsytqzkvdjb`
