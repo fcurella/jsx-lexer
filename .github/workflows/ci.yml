@@ -33,7 +33,7 @@ jobs:
       uses: liskin/gh-problem-matcher-wrap@v1
       with:
         linters: flake8
-        run: flake8 --extend-ignore=E203 faker tests
+        run: flake8 --extend-ignore=E203 jsx tests
 
   checkmanifest:
     runs-on: ubuntu-latest

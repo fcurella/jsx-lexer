@@ -1,13 +1,16 @@
 doc8:
 	doc8
 
+flake8:
+	flake8 --extend-ignore=E203 jsx tests
+
 black:
 	black --line-length 120 .
 
 isort:
 	isort --atomic .
 
-lint: doc8 isort black
+lint: doc8 flake8 isort black
 
 test:
 	coverage run --source=jsx setup.py test

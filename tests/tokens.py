@@ -254,7 +254,8 @@ TOKENS = [
     (Whitespace, "\n\n"),
     (
         Token.Comment.Multiline,
-        "/*\n  Some comment. Tags shouldn't be lexed in here either\n  <div class=\"blog-body\">\n  <h3>What's going on?</h3>\n  <p>Hello World!</p>\n  </div>\n*/",
+        '/*\n  Some comment. Tags shouldn\'t be lexed in here either\n  <div class="blog-body">\n  '
+        "<h3>What's going on?</h3>\n  <p>Hello World!</p>\n  </div>\n*/",
     ),
     (Whitespace, "\n\n"),
     (Token.Keyword.Declaration, "const"),
