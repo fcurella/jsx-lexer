@@ -1,8 +1,9 @@
 import re
 
-from pygments.lexer import bygroups, default, include
+from pygments.lexer import bygroups, include, default
 from pygments.lexers.javascript import JavascriptLexer
 from pygments.token import Name, Operator, Punctuation, String, Text
+
 
 # Use same tokens as `JavascriptLexer`, but with tags and attributes support
 TOKENS = JavascriptLexer.tokens

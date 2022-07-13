@@ -1,15 +1,14 @@
 import os
 import re
-
 from unittest import TestCase
 
 from pygments import lexers
 from pygments.token import Token
-
 from jsx import lexer as lexer_mod
 from jsx.lexer import JsxLexer
 
 from .tokens import TOKENS as expected_tokens
+
 
 CURRENT_DIR = os.path.abspath(os.path.dirname(__file__))
 

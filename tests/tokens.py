@@ -1,5 +1,6 @@
 from pygments.token import Token
 
+
 TOKENS = [
     (Token.Keyword.Declaration, "const"),
     (Token.Text, " "),
