@@ -27,7 +27,7 @@ TOKENS.update(
         ],
         "tag": [
             (r"\s+", Text),
-            (r"([\w]+\s*)(=)(\s*)", bygroups(Name.Attribute, Operator, Text), "attr"),
+            (r"([\w-]+\s*)(=)(\s*)", bygroups(Name.Attribute, Operator, Text), "attr"),
             (r"[{}]+", Punctuation),
             (r"[\w\.]+", Name.Attribute),
             (r"(/?)(\s*)(>)", bygroups(Punctuation, Text, Punctuation), "#pop"),

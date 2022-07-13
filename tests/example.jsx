@@ -21,6 +21,7 @@ class BlogPost extends React.Component {
       <p>{this.props.body}</p>
       <CustomComponent>text</CustomComponent>
       <input type="text" {...props.inputProps} />
+      <button aria-label="Submit">Submit</button>
     </div>
     );
   }
