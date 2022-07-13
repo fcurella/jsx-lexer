@@ -1,10 +1,13 @@
+doc8:
+	doc8
+
 black:
 	black --line-length 120 .
 
 isort:
 	isort --atomic .
 
-lint: isort black
+lint: doc8 isort black
 
 test:
 	coverage run --source=jsx setup.py test
