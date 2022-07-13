@@ -1,3 +1,6 @@
-graft tests
-include .travis.yml
+prune tests
 include LICENSE
+exclude .coveragerc
+exclude .isort.cfg
+exclude Makefile
+exclude tox.ini
