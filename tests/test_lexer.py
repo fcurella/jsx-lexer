@@ -64,6 +64,32 @@ class JsxLexerTestCase(TestCase):
             ],
         )
 
+    def test_lexing_aria_attribute(self):
+        lexer = lexers.get_lexer_by_name("jsx")
+        tokens = lexer.get_tokens(
+            """
+            <button aria-label="Submit">Submit</button>
+        """
+        )
+
+        self.assertEqual(
+            self.__filter_tokens(tokens),
+            [
+                (Token.Punctuation, "<"),
+                (Token.Name.Tag, "button"),
+                # (Token.Text, " "),
+                (Token.Name.Attribute, "aria-label"),
+                (Token.Operator, "="),
+                (Token.Literal.String, '"Submit"'),
+                (Token.Punctuation, ">"),
+                (Token.Name.Other, "Submit"),
+                (Token.Punctuation, "<"),
+                (Token.Punctuation, "/"),
+                (Token.Name.Tag, "button"),
+                (Token.Punctuation, ">"),
+            ],
+        )
+
     def test_lexing_multiple_attributes(self):
         lexer = lexers.get_lexer_by_name("jsx")
         tokens = lexer.get_tokens(

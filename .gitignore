@@ -7,3 +7,5 @@ build
 .coverage
 coverage_html_report
 .idea
+.vscode
+.DS_Store
