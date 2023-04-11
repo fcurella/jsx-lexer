@@ -30,5 +30,6 @@ setup(
     entry_points="""
         [pygments.lexers]
         jsx=jsx:JsxLexer
+        tsx=jsx:TsxLexer
     """,
 )
