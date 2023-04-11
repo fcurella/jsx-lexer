@@ -76,6 +76,18 @@ class TsxLexer(TypeScriptLexer):
     aliases = ["tsx", "react-typescript"]
     filenames = ["*.tsx"]
     mimetypes = ["text/tsx", "text/typescript-jsx"]
+    mimetypes = ["text/jsx"]
+
+    flags = re.MULTILINE | re.DOTALL | re.UNICODE
+
+    tokens = JSX_TOKENS
+
+
+class TsxLexer(TypeScriptLexer):
+    name = "react-typescript"
+    aliases = ["tsx", "react-typescript"]
+    filenames = ["*.tsx"]
+    mimetypes = ["text/tsx", "text/typescript-jsx"]
 
     flags = re.MULTILINE | re.DOTALL | re.UNICODE
 
