@@ -3,7 +3,7 @@ import os
 
 from setuptools import find_packages, setup
 
-VERSION = "2.0.0"
+VERSION = "2.0.1"
 here = os.path.abspath(os.path.dirname(__file__))
 README = io.open(os.path.join(here, "README.rst"), encoding="utf8").read()
 
